@@ -3,9 +3,11 @@ from agents import Agent
 
 HOW_MANY_SEARCHES = 5
 
-INSTRUCTIONS = f"You are a helpful research assistant. Given a query, come up with a set of web searches \
-to perform to best answer the query. Output {HOW_MANY_SEARCHES} terms to query for."
-
+INSTRUCTIONS = f"""
+You are a helpful research assistant. Given a query, come up with a set of web searches to find the information to best answer the query. 
+The information must be recent and relevant as of current year 2026. 
+Output {HOW_MANY_SEARCHES} terms to query for.
+"""
 
 class WebSearchItem(BaseModel):
     reason: str = Field(description="Your reasoning for why this search is important to the query.")
@@ -13,7 +15,7 @@ class WebSearchItem(BaseModel):
 
 
 class WebSearchPlan(BaseModel):
-    searches: list[WebSearchItem] = Field(description="A list of web searches to perform to best answer the query.")
+    searches: list[WebSearchItem] = Field(description="A list of web searches to find the information to best answer the query.")
     
 planner_agent = Agent(
     name="PlannerAgent",

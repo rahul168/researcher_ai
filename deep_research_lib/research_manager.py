@@ -1,8 +1,8 @@
 from agents import Runner, trace, gen_trace_id
-from .search_agent import search_agent
-from .planner_agent import planner_agent, WebSearchItem, WebSearchPlan
-from .writer_agent import writer_agent, ReportData
-from .email_agent import email_agent
+from deep_research_lib.search_agent import search_agent
+from deep_research_lib.planner_agent import planner_agent, WebSearchItem, WebSearchPlan
+from deep_research_lib.writer_agent import writer_agent, ReportData
+from deep_research_lib.email_agent import email_agent
 import asyncio
 
 class ResearchManager:
